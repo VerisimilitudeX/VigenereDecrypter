@@ -1,5 +1,3 @@
-
-
 public class CaesarCracker {
     char mostCommon;
 
