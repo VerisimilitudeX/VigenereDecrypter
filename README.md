@@ -1,6 +1,9 @@
 ###### For a more basic encrypter, please check out my [Caesar Cipher software auto decrypter](https://github.com/Verisimilitude11/Caesar-Cipher-Decrypter), which can automatically decrypt encrypted ciphers without a key.
 
 # Vigenère Cipher
+
+[![wakatime](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher.svg)](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher)
+
 > This Vigenère cipher encrypts and decrypts alphabetic text in _*any*_ language by using a series of interwoven polyalphabetic Caesar ciphers, without using keys.
 
 The cipher, described in 1553 by Giovan Battista Bellaso, is simple to understand and implement, but it resisted all attempts to break it until 1863, three centuries later. This earned it the French description "le chiffrage indéchiffrable" (the indecipherable cipher).
