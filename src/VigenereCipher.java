@@ -3,10 +3,10 @@ import java.util.*;
 public class VigenereCipher {
     CaesarCipher[] ciphers;
 
-    public VigenereCipher(int[] key) {
-        ciphers = new CaesarCipher[key.length];
-        for (int i = 0; i < key.length; i++) {
-            ciphers[i] = new CaesarCipher(key[i]);
+    public VigenereCipher(ArrayList<Integer> key) {
+        ciphers = new CaesarCipher[key.size()];
+        for (int i = 0; i < key.size(); i++) {
+            ciphers[i] = new CaesarCipher(key.get(i));
         }
     }
 
