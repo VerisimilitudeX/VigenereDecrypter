@@ -20,19 +20,19 @@ package org.apache.commons.csv;
 /**
  * Utility class for input parameter validation.
  *
- * TODO Replace usage with {@link Objects} when we switch to Java 7.
+ * <p>TODO Replace usage with {@link Objects} when we switch to Java 7.
  *
  * @version $Id: Assertions.java 1742459 2016-05-05 19:43:57Z britter $
  */
 final class Assertions {
 
-    private Assertions() {
-        // can not be instantiated
-    }
+  private Assertions() {
+    // can not be instantiated
+  }
 
-    public static void notNull(final Object parameter, final String parameterName) {
-        if (parameter == null) {
-            throw new IllegalArgumentException("Parameter '" + parameterName + "' must not be null!");
-        }
+  public static void notNull(final Object parameter, final String parameterName) {
+    if (parameter == null) {
+      throw new IllegalArgumentException("Parameter '" + parameterName + "' must not be null!");
     }
+  }
 }
