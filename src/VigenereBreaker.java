@@ -84,7 +84,7 @@ public class VigenereBreaker {
 
   public String breakVigenere() {
     String MaxDecryption = new String();
-    FileResource resource = new FileResource("assets/messages/secretmessage2.txt");
+    FileResource resource = new FileResource("assets/messages/secretmessage5.txt");
     String message = resource.asString();
     HashSet<String> DictContent = new HashSet<String>();
     FileResource dictResource = new FileResource("assets/dictionaries/English");
