@@ -8,6 +8,8 @@
 
 The cipher, described in 1553 by Giovan Battista Bellaso, is simple to understand and implement, but it resisted all attempts to break it until 1863, three centuries later. This earned it the French description "le chiffrage indéchiffrable" (the indecipherable cipher).
 
+This software decrypts a Vigenère cipher in *any* human language without knowing the keys used for polyalphabetic substitution.
+
 The Caesar cipher is a type of substitution cipher in which each letter in the plaintext is 'shifted' down the alphabet a certain number of times.
 
 Example: The text 'defend the east wall of the castle' is encrypted with a shift of 1 (key of 'a')
