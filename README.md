@@ -4,7 +4,7 @@
 
 [![wakatime](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher.svg)](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher)
 
-> This Vigenère cipher encrypts and decrypts alphabetic text in _*any*_ language by using a series of interwoven polyalphabetic Caesar ciphers, without using keys.
+> Decrypt a Vigenère cipher in _*any*_ language without knowing the keys used for polyalphabetic substitution by performing frequency analysis and comparing categorical probability distributions.
 
 The cipher, described in 1553 by Giovan Battista Bellaso, is simple to understand and implement, but it resisted all attempts to break it until 1863, three centuries later. This earned it the French description "le chiffrage indéchiffrable" (the indecipherable cipher).
 
