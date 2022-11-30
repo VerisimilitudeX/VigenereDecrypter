@@ -1,6 +1,6 @@
 ###### For a more basic encrypter, please check out my [Caesar Cipher software auto decrypter](https://github.com/Verisimilitude11/Caesar-Cipher-Decrypter), which can automatically decrypt encrypted Caesar Ciphers without a key.
 
-# Vigenère Decrypter
+# VigenèreDecrypter
 
 [![wakatime](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher.svg)](https://wakatime.com/badge/github/Verisimilitude11/Vigenere-Cipher)
 
