@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'com.VerisimilitudeX'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
