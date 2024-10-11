@@ -17,4 +17,11 @@ public class CaesarCipherTest {
         assertThat(caesarCipher.encrypt("efgfoe uif fbtu xbmm pg uif dbtumf"))
                 .isEqualTo("ijkjsi ymj jfxy bfqq tk ymj hfxyqj");
     }
+
+    @Test
+    public void convertToString() {
+        var caesarCipher = new CaesarCipher(1);
+
+        assertThat(caesarCipher.toString()).isEqualTo("1");
+    }
 }
