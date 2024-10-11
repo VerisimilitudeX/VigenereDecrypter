@@ -434,14 +434,14 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
         CSVRecord next = this.current;
         this.current = null;
 
-        if (next == null) {
-          // hasNext() wasn't called before
-          next = this.getNextRecord();
-          if (next == null) {
-            throw new NoSuchElementException("No more CSV records available");
-          }
+        if (next != null) {
+            return next;
         }
-
+        // hasNext() wasn't called before
+        next = this.getNextRecord();
+        if (next == null) {
+          throw new NoSuchElementException("No more CSV records available");
+        }
         return next;
       }
 
@@ -499,13 +499,12 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
     if (!this.record.isEmpty()) {
       this.recordNumber++;
       final String comment = sb == null ? null : sb.toString();
-      result =
-          new CSVRecord(
-              this.record.toArray(new String[this.record.size()]),
-              this.headerMap,
-              comment,
-              this.recordNumber,
-              startCharPosition);
+      result = new CSVRecord(
+                this.record.toArray(String[]::new),
+                this.headerMap,
+                comment,
+                this.recordNumber,
+                startCharPosition);
     }
     return result;
   }
