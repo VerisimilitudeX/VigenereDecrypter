@@ -330,7 +330,7 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
   public List<CSVRecord> getRecords() throws IOException {
     final List<CSVRecord> records = new ArrayList<>();
     CSVRecord rec = this.nextRecord();
-    while (rec!= null) {
+    while (rec != null) {
       records.add(rec);
       rec = this.nextRecord();
     }
@@ -436,7 +436,7 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
         this.current = null;
 
         if (next != null) {
-            return next;
+          return next;
         }
         // hasNext() wasn't called before
         next = this.getNextRecord();
