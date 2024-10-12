@@ -435,14 +435,14 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
         CSVRecord next = this.current;
         this.current = null;
 
-        if (next == null) {
-          // hasNext() wasn't called before
-          next = this.getNextRecord();
-          if (next == null) {
-            throw new NoSuchElementException("No more CSV records available");
-          }
+        if (next != null) {
+            return next;
         }
-
+        // hasNext() wasn't called before
+        next = this.getNextRecord();
+        if (next == null) {
+          throw new NoSuchElementException("No more CSV records available");
+        }
         return next;
       }
 
