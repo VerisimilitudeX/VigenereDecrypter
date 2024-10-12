@@ -328,10 +328,11 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
    * @throws IOException on parse error or input read-failure
    */
   public List<CSVRecord> getRecords() throws IOException {
-    CSVRecord rec;
-    final List<CSVRecord> records = new ArrayList<CSVRecord>();
-    while ((rec = this.nextRecord()) != null) {
+    final List<CSVRecord> records = new ArrayList<>();
+    CSVRecord rec = this.nextRecord();
+    while (rec!= null) {
       records.add(rec);
+      rec = this.nextRecord();
     }
     return records;
   }
