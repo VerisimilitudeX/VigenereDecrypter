@@ -1,6 +1,7 @@
 package edu.duke;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * This utility class allows multiple classes to iterate over a text source in multiple ways.
@@ -12,7 +13,7 @@ import java.util.Iterator;
  *     http://www.apache.org/licenses/LICENSE-2.0 for details.
  */
 class TextIterable implements Iterable<String> {
-  private String[] myStrings;
+  private final String[] myStrings;
 
   /** Create from a given string. */
   public TextIterable(String source, String regexp) {
@@ -33,7 +34,11 @@ class TextIterable implements Iterable<String> {
       }
 
       @Override
-      public String next() {
+      public String next() throws NoSuchElementException {
+        if (!hasNext()) {
+          throw new NoSuchElementException("No more elements in the iteration");
+        }
+
         String s = myStrings[myCount];
         myCount++;
         return s;
