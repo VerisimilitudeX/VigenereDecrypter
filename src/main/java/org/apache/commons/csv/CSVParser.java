@@ -328,10 +328,11 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
    * @throws IOException on parse error or input read-failure
    */
   public List<CSVRecord> getRecords() throws IOException {
-    CSVRecord rec;
-    final List<CSVRecord> records = new ArrayList<CSVRecord>();
-    while ((rec = this.nextRecord()) != null) {
+    final List<CSVRecord> records = new ArrayList<>();
+    CSVRecord rec = this.nextRecord();
+    while (rec != null) {
       records.add(rec);
+      rec = this.nextRecord();
     }
     return records;
   }
@@ -434,14 +435,14 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
         CSVRecord next = this.current;
         this.current = null;
 
-        if (next == null) {
-          // hasNext() wasn't called before
-          next = this.getNextRecord();
-          if (next == null) {
-            throw new NoSuchElementException("No more CSV records available");
-          }
+        if (next != null) {
+          return next;
         }
-
+        // hasNext() wasn't called before
+        next = this.getNextRecord();
+        if (next == null) {
+          throw new NoSuchElementException("No more CSV records available");
+        }
         return next;
       }
 
@@ -501,7 +502,7 @@ public final class CSVParser implements Iterable<CSVRecord>, Closeable {
       final String comment = sb == null ? null : sb.toString();
       result =
           new CSVRecord(
-              this.record.toArray(new String[this.record.size()]),
+              this.record.toArray(String[]::new),
               this.headerMap,
               comment,
               this.recordNumber,

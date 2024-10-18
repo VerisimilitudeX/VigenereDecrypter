@@ -5,7 +5,7 @@ public class VigenereBreaker {
 
   public String sliceString(String message, int whichSlice, int totalSlices) {
     StringBuilder slicing = new StringBuilder(message);
-    String result = new String();
+    String result = "";
     for (int k = whichSlice; k < slicing.length(); k += totalSlices) {
       result += slicing.charAt(k);
     }
@@ -47,8 +47,8 @@ public class VigenereBreaker {
     int max = 0;
     ArrayList<Integer> keyReturn = new ArrayList<Integer>(100);
     int KeyLength = 0;
-    String aMessage = new String();
-    String largestDecryption = new String();
+    String aMessage;
+    String largestDecryption = "";
     for (int klength = 1; klength < 100; klength++) {
       keyReturn = tryKeyLength(encrypted, klength, 'e');
       VigenereCipher VCipher = new VigenereCipher(keyReturn);
@@ -68,8 +68,8 @@ public class VigenereBreaker {
   public String breakForLanguageQuizz(String encrypted, HashSet<String> dict) {
     int max = 0;
     ArrayList<Integer> keyReturn = new ArrayList<Integer>(100);
-    String aMessage = new String();
-    String largestDecryption = new String();
+    String aMessage;
+    String largestDecryption = "";
     keyReturn = tryKeyLength(encrypted, 38, 'e');
     VigenereCipher VCipher = new VigenereCipher(keyReturn);
     aMessage = VCipher.decrypt(encrypted);
@@ -83,7 +83,7 @@ public class VigenereBreaker {
   }
 
   public String breakVigenere() {
-    String MaxDecryption = new String();
+    String MaxDecryption;
     FileResource resource = new FileResource("assets/messages/secretmessage5.txt");
     String message = resource.asString();
     HashSet<String> DictContent = new HashSet<String>();

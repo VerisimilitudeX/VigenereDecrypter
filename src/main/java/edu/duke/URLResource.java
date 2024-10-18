@@ -179,9 +179,10 @@ public class URLResource {
     try {
       buff = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
       StringBuilder contents = new StringBuilder();
-      String line = null;
-      while ((line = buff.readLine()) != null) {
+      String line = buff.readLine();
+      while (line != null) {
         contents.append(line + "\n");
+        line = buff.readLine();
       }
       return contents.toString();
     } catch (Exception e) {
