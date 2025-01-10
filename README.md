@@ -92,3 +92,17 @@ key         deciphered sequence           chi-sq
 24     XWTBLWITIIWIXILSMGQCIWIMMSXYSR     279.93
 25     WVSAKVHSHHVHWHKRLFPBHVHLLRWXRQ     158.53
 ```
+
+## Stars
+Researchers employing DNAnalyzer in their investigations are encouraged to star this repository. Such engagement strengthens community collaboration and perpetuates open-source innovation.
+
+<a href="https://star-history.com/#VerisimilitudeX/VigenereDecrypter&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+            srcset="https://api.star-history.com/svg?repos=VerisimilitudeX/VigenereDecrypter&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)"
+            srcset="https://api.star-history.com/svg?repos=VerisimilitudeX/VigenereDecrypter&type=Date" />
+    <img alt="Star History Chart"
+         src="https://api.star-history.com/svg?repos=VerisimilitudeX/VigenereDecrypter&type=Date" />
+  </picture>
+</a>
