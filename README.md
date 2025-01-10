@@ -94,7 +94,6 @@ key         deciphered sequence           chi-sq
 ```
 
 ## Stars
-Researchers employing DNAnalyzer in their investigations are encouraged to star this repository. Such engagement strengthens community collaboration and perpetuates open-source innovation.
 
 <a href="https://star-history.com/#VerisimilitudeX/VigenereDecrypter&Date">
   <picture>
