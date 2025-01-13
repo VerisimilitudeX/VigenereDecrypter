@@ -13,7 +13,7 @@ public class VigenereBreaker {
   }
 
   public ArrayList<Integer> tryKeyLength(String encrypted, int klength, char mostCommon) {
-    CaesarCracker CaesarCracker = new CaesarCracker('e');
+    CaesarCracker CaesarCracker = new CaesarCracker(mostCommon);
     int aKey;
     ArrayList<Integer> key = new ArrayList<Integer>(klength);
     for (int k = 0; k < klength; k++) {
@@ -43,14 +43,14 @@ public class VigenereBreaker {
     return counts;
   }
 
-  public String breakForLanguage(String encrypted, HashSet<String> dict) {
+  public String breakForLanguage(String encrypted, HashSet<String> dict, char mostCommon) {
     int max = 0;
     ArrayList<Integer> keyReturn = new ArrayList<Integer>(100);
     int KeyLength = 0;
     String aMessage;
     String largestDecryption = "";
     for (int klength = 1; klength < 100; klength++) {
-      keyReturn = tryKeyLength(encrypted, klength, 'e');
+      keyReturn = tryKeyLength(encrypted, klength, mostCommon);
       VigenereCipher VCipher = new VigenereCipher(keyReturn);
       aMessage = VCipher.decrypt(encrypted);
       int counts = countWords(aMessage, dict);
@@ -89,7 +89,7 @@ public class VigenereBreaker {
     HashSet<String> DictContent = new HashSet<String>();
     FileResource dictResource = new FileResource("assets/dictionaries/English");
     DictContent = readDictionary(dictResource);
-    MaxDecryption = breakForLanguage(message, DictContent);
+    MaxDecryption = breakForLanguage(message, DictContent, 'e');
     return MaxDecryption;
   }
 }

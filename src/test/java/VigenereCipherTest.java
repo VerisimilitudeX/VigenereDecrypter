@@ -16,4 +16,25 @@ public class VigenereCipherTest {
     assertThat(vigenereCipher.encrypt(secretMessage.asString()))
         .isEqualTo(encryptedSecretMessage.asString());
   }
+
+  @Test
+  public void decryptCipherText() {
+    var encryptedSecretMessage = new FileResource("assets/messages/encryptedSecretMessage2.txt");
+    var key = new ArrayList<>(Arrays.asList(3, 20, 10, 4));
+    var vigenereCipher = new VigenereCipher(key);
+    var secretMessage = new FileResource("assets/messages/secretmessage2.txt");
+
+    assertThat(vigenereCipher.decrypt(encryptedSecretMessage.asString()))
+        .isEqualTo(secretMessage.asString());
+  }
+
+  @Test
+  public void cipherAndDecryptPlainText() {
+    var secretMessage = new FileResource("assets/messages/secretmessage2.txt");
+    var key = new ArrayList<>(Arrays.asList(3, 20, 10, 4));
+    var vigenereCipher = new VigenereCipher(key);
+
+    var encryptedMessage = vigenereCipher.encrypt(secretMessage.asString());
+    assertThat(vigenereCipher.decrypt(encryptedMessage)).isEqualTo(secretMessage.asString());
+  }
 }

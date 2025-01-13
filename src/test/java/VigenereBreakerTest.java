@@ -24,4 +24,30 @@ public class VigenereBreakerTest {
                 14, 23, 3, 9, 6, 25, 4, 18, 16, 12, 19, 11, 19, 0, 21, 4));
     assertThat(result).isEqualTo(expected);
   }
+
+  @Test
+  public void breakForLanguage() {
+    var vigenereBreaker = new VigenereBreaker();
+    var secretMessage = new FileResource("assets/messages/secretmessage2.txt");
+    var dictResource = new FileResource("assets/dictionaries/English");
+    var dictContent = vigenereBreaker.readDictionary(dictResource);
+    var decryptedMessage =
+        vigenereBreaker.breakForLanguage(secretMessage.asString(), dictContent, 'e');
+
+    assertThat(decryptedMessage)
+        .isEqualTo(
+            "The quick brown fox jumps over the lazy dog. This is a test message to check the"
+                + " correctness of the VigenereBreaker class.");
+  }
+
+  @Test
+  public void countWords() {
+    var vigenereBreaker = new VigenereBreaker();
+    var secretMessage = new FileResource("assets/messages/secretmessage2.txt");
+    var dictResource = new FileResource("assets/dictionaries/English");
+    var dictContent = vigenereBreaker.readDictionary(dictResource);
+    var wordCount = vigenereBreaker.countWords(secretMessage.asString(), dictContent);
+
+    assertThat(wordCount).isEqualTo(12);
+  }
 }
