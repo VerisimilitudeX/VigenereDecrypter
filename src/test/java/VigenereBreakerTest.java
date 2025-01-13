@@ -3,7 +3,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import edu.duke.FileResource;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import org.junit.Test;
 
 public class VigenereBreakerTest {
@@ -32,11 +31,13 @@ public class VigenereBreakerTest {
     var secretMessage = new FileResource("assets/messages/secretmessage2.txt");
     var dictResource = new FileResource("assets/dictionaries/English");
     var dictContent = vigenereBreaker.readDictionary(dictResource);
-    var decryptedMessage = vigenereBreaker.breakForLanguage(secretMessage.asString(), dictContent, 'e');
+    var decryptedMessage =
+        vigenereBreaker.breakForLanguage(secretMessage.asString(), dictContent, 'e');
 
     assertThat(decryptedMessage)
         .isEqualTo(
-            "The quick brown fox jumps over the lazy dog. This is a test message to check the correctness of the VigenereBreaker class.");
+            "The quick brown fox jumps over the lazy dog. This is a test message to check the"
+                + " correctness of the VigenereBreaker class.");
   }
 
   @Test
