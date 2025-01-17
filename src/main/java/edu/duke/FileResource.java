@@ -344,6 +344,9 @@ public class FileResource {
 
   // Create from the name of a File
   private void initRead(String fname) {
+    if (fname == null || fname.isEmpty()) {
+      throw new IllegalArgumentException("FileResource: file name cannot be null or empty");
+    }
     try {
       myPath = fname;
       InputStream is = getClass().getClassLoader().getResourceAsStream(fname);
@@ -407,6 +410,9 @@ public class FileResource {
 
   // create file for writing
   private void initWrite(String fname) {
+    if (fname == null || fname.isEmpty()) {
+      throw new IllegalArgumentException("FileResource: file name cannot be null or empty");
+    }
     try {
       URL loc = getClass().getClassLoader().getResource(fname);
       if (loc != null) {
