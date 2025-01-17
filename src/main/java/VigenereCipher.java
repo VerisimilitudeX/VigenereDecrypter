@@ -6,7 +6,8 @@ public class VigenereCipher {
   public VigenereCipher(ArrayList<Integer> key) {
     for (Integer k : key) {
       if (k == null || k < 0 || k > 25) {
-        throw new IllegalArgumentException("Key must contain only valid integers between 0 and 25.");
+        throw new IllegalArgumentException(
+            "Key must contain only valid integers between 0 and 25.");
       }
     }
     ciphers = new CaesarCipher[key.size()];
