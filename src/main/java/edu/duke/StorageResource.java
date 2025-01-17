@@ -66,6 +66,9 @@ public class StorageResource {
    * @param s the value added
    */
   public void add(String s) {
+    if (s == null || s.isEmpty()) {
+      throw new IllegalArgumentException("String cannot be null or empty");
+    }
     myStrings.add(s);
   }
 

@@ -13,6 +13,9 @@ public class VigenereBreaker {
   }
 
   public ArrayList<Integer> tryKeyLength(String encrypted, int klength, char mostCommon) {
+    if (klength > encrypted.length()) {
+      throw new IllegalArgumentException("Key length cannot be greater than the length of the encrypted message.");
+    }
     CaesarCracker CaesarCracker = new CaesarCracker(mostCommon);
     int aKey;
     ArrayList<Integer> key = new ArrayList<Integer>(klength);

@@ -95,6 +95,15 @@ public class RangeResource {
               + start
               + ")");
     }
+    if (start < Integer.MIN_VALUE || start > Integer.MAX_VALUE) {
+      throw new ResourceException("RangeResource: invalid start value, out of range");
+    }
+    if (end < Integer.MIN_VALUE || end > Integer.MAX_VALUE) {
+      throw new ResourceException("RangeResource: invalid end value, out of range");
+    }
+    if (increment < Integer.MIN_VALUE || increment > Integer.MAX_VALUE) {
+      throw new ResourceException("RangeResource: invalid increment value, out of range");
+    }
     myStart = start;
     myEnd = end;
     myIncrement = increment;

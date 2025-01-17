@@ -46,7 +46,7 @@ public class DirectoryResource {
   public Iterable<File> selectedFiles() {
     File[] files = FileSelector.selectFiles();
     // guaranteed to have at least one item
-    if (files[0] == null) {
+    if (files == null || files.length == 0 || files[0] == null) {
       // return empty list rather than null, so others can throw the exception if
       // needed
       return new ArrayList<File>();

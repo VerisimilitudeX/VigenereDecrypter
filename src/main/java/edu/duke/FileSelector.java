@@ -112,6 +112,11 @@ class FileSelector {
 
     public ChooserFilter(String[] extensionsAccepted) {
       if (extensionsAccepted != null) {
+        for (String ext : extensionsAccepted) {
+          if (ext == null || ext.isEmpty() || !ext.matches("[a-zA-Z0-9]+")) {
+            throw new IllegalArgumentException("Invalid file extension: " + ext);
+          }
+        }
         myExtensions = String.format("(?i).*\\.(%s)", String.join("|", extensionsAccepted));
       }
     }

@@ -6,6 +6,9 @@ public class CaesarCracker {
   }
 
   public CaesarCracker(char c) {
+    if (!Character.isLetter(c)) {
+      throw new IllegalArgumentException("mostCommon character must be a valid letter.");
+    }
     mostCommon = c;
   }
 
